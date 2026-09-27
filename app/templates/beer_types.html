@@ -1,10 +1,10 @@
 {%extends "base.html" %}
 
 {% block main %}
-<p>Here are some types of beer</p>
+<p>Here are some beers from our database</p>
 <style>
 .td_bgcolor td {
-    background-color: #0a0d11
+    background-color: #c99c3b
 }
 
 </style>
@@ -13,17 +13,15 @@
     <thead>
         <tr>
             <th>Name</th>
+            <th>Prices</th>
         </tr>
     </thead>
     <tbody>
-        {% for beer in content %} 
-            <tr>
-        <td>
-        {{ beer.image }}
-        </td>
+        {% for beer in content[:20] %} 
+            <tr {% if loop.index0 %2 == 1 %} class = "td_bgcolor" {% endif %}>
+        
         <td>{{ beer.name }}</td>
         <td>{{ beer.price }}</td>
-        <td>{{ beer.rating.average }}</td>
         </tr>
         {% endfor %}
     </tbody>
