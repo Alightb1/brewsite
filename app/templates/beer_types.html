@@ -7,18 +7,29 @@
     background-color: #c99c3b
 }
 
+.td_otherbgcolor td {
+    background-color:#FBB117
+}
+
+.tr_bg_color th {
+    background-color:rgb(123, 196, 241)
+}
+
 </style>
 
 <table class="table table-bordered align-top">
     <thead>
-        <tr>
+        <tr class = "tr_bg_color" >
             <th>Name</th>
             <th>Prices</th>
         </tr>
     </thead>
     <tbody>
         {% for beer in content[:20] %} 
-            <tr {% if loop.index0 %2 == 1 %} class = "td_bgcolor" {% endif %}>
+            <tr {% if loop.index0 %2 == 1 %} class = "td_bgcolor" 
+            {% else %}
+            class = "td_otherbgcolor"
+            {% endif %}>
         
         <td>{{ beer.name }}</td>
         <td>{{ beer.price }}</td>

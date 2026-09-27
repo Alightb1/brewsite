@@ -4,14 +4,19 @@
 <p>Heres our favorite breweries</p>
 <style>
 .td_bgcolor td {
-    background-color: #85aacf
+    background-color: #FBB117
 }
-
+.td_othercolor td {
+    background-color: rgb(64, 190, 45);
+}
+.tr_bg_color th {
+    background-color:rgb(123, 196, 241)
+}
 </style>
 <div class="container">
 <table class="table table-bordered align-top">
     <thead>
-        <tr>
+        <tr class = "tr_bg_color" >
             <th>Name</th>
             <th>Type</th>
             <th>Country</th>
@@ -22,7 +27,11 @@
     </thead>
     <tbody>
         {% for b in content %} 
-        <tr {% if loop.index0 //4 %2 == 1 %} class = "td_bgcolor" {% endif %}>
+        <tr {% if loop.index0 //2 %3 == 1 %} 
+        class = "td_bgcolor"
+        {% else %}
+            class="td_othercolor"
+        {% endif %}>
                 <td>{{ b.get("name") }}</td>
                 <td>{{ b.get("brewery_type") }}</td>
                 <td>{{ b.get("country") }}</td>
