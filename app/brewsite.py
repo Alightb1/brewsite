@@ -10,7 +10,7 @@ app = Flask(__name__)
 @app.route("/")
 @app.route("/home")
 def home():
-	return render_template("home.html", user = "James Smith")
+	return render_template("home.html", user = "Anthony Lightbourn")
 
 @app.route("/breweries")
 def breweries():
@@ -18,12 +18,12 @@ def breweries():
 
 @app.route("/beer_types")
 def beer_types():
-	return render_template("beer_types.html", user = "James Smith")
+	return render_template("beer_types.html", user = "Anthony Lightbourn")
 
 
 @app.route("/about")
 def about():
-	return render_template("about.html", user = "James Smith")
+	return render_template("about.html", user = "Anthony Lightbourn")
 
 
 
