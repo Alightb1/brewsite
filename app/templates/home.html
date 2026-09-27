@@ -3,7 +3,12 @@
 {% block main %}
 <p> Welcome to our brewsite page</p>
 <p> {{ user }} </p>
-<img src="{{ url_for('static', filename = 'images/Flensburg.jpg') }}" alt="Nice cold bier">
+<img src="{{ url_for('static', filename = 'images/Flensburg.jpg') }}" alt="Nice cold bier" width="600" height="400">
+<img src="{{ url_for('static', filename = 'images/beermug.jpg') }}" alt="beer in a mug" width="600" height="400">
+<img src="{{ url_for('static', filename = 'images/cheers.jpeg') }}" alt="Multiple mugs of beer" width="600" height="400">
+<img src="{{ url_for('static', filename = 'images/Pilsner.jpg') }}" alt="Pilsner beer" width="600" height="400">
+<img src="{{ url_for('static', filename = 'images/Flensburgpacket.jpg') }}" alt="Pilsner beer" width="600" height="400">
+<img src="{{ url_for('static', filename = 'images/clink.jpg') }}" alt="Pilsner beer" width="600" height="400">
 
 
 {% endblock main %}
