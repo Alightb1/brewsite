@@ -1,8 +1,34 @@
 {%extends "base.html" %}
 
 {% block main %}
-<p>There are multiple types of beer</p>
-<p> {{ user }} </p>
+<p>Here are some types of beer</p>
+<style>
+.td_bgcolor td {
+    background-color: #0a0d11
+}
 
-{% endblock main %}
+</style>
 
+<table class="table table-bordered align-top">
+    <thead>
+        <tr>
+            <th>Name</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for beer in content %} 
+            <tr>
+        <td>
+        {{ beer.image }}
+        </td>
+        <td>{{ beer.name }}</td>
+        <td>{{ beer.price }}</td>
+        <td>{{ beer.rating.average }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+
+<p></p>
+{% endblock %}

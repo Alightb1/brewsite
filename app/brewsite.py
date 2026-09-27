@@ -2,7 +2,9 @@ from flask import Flask
 from flask import render_template 
 import requests, json, warnings 
 response = requests.get("https://api.openbrewerydb.org/v1/breweries")
+beer_response = requests.get("https://api.sampleapis.com/beers/ale")
 
+beer_data = json.loads(beer_response.content)
 data = json.loads(response.content)
 
 app = Flask(__name__)
@@ -18,7 +20,7 @@ def breweries():
 
 @app.route("/beer_types")
 def beer_types():
-	return render_template("beer_types.html", user = "Anthony Lightbourn")
+	return render_template("beer_types.html", content = beer_data)
 
 
 @app.route("/about")
